@@ -100,3 +100,37 @@ countBs = (a) => {
 console.log(countBs('BOBOBOOB')) // 4B 
 
 console.log(countChar('CeCi est un C ', 'C')) // 3C
+
+//Chapter 4Data Structures: Objects and Arrays
+
+
+// The sum of a Range
+// Function that take two arguments start and end and returns an array containing all the numbers from start to end
+
+range = (a, b, i= a < b ? 1 : -1) => {
+    let arr = []
+    for (let j = a; j < b + 1; j+i) {
+        arr.push(j)
+    }
+    return arr
+}
+
+console.log(range(2, 5))
+
+//sum function that takes an array of numbers and returns the sum of these numbers. 
+
+sum = (numbers) => {
+    let arrayLentgh = (numbers.length)
+    let sum = 0
+    for (let i = 0; i < arrayLentgh; i++) {
+        sum += numbers[i]
+    }
+    return sum
+}
+
+console.log(sum([1, 2, 3, 4, 5, 6, 7]))
+
+// Merge the two function 
+
+
+console.log(sum(range(7, 89)))
