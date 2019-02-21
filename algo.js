@@ -107,9 +107,9 @@ console.log(countChar('CeCi est un C ', 'C')) // 3C
 // The sum of a Range
 // Function that take two arguments start and end and returns an array containing all the numbers from start to end
 
-range = (a, b, i= a < b ? 1 : -1) => {
+range = (a, b, i = a < b ? 1 : -1) => {
     let arr = []
-    for (let j = a; j < b + 1; j+i) {
+    for (let j = a; j < b + 1; j + i) {
         arr.push(j)
     }
     return arr
@@ -134,3 +134,16 @@ console.log(sum([1, 2, 3, 4, 5, 6, 7]))
 
 
 console.log(sum(range(7, 89)))
+
+
+
+//Reversing an array
+reverseArray = (numbers) => {
+    let output = []
+    for (let i = numbers.length - 1; i >= 0; i--){
+         output.push(numbers[i])
+    }
+    return output
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]))
