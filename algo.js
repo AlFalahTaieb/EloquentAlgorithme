@@ -77,3 +77,26 @@ isEven = (a) => {
 console.log(isEven(50))
 console.log(isEven(75))
 console.log(isEven(-1))
+
+
+//Bean Counting count Number of B on a string PAGE 56 
+
+countChar = (a, b) => {
+    let comp = 0
+
+    for (const lettre of a) {
+        if (lettre == b) {
+            comp++
+        }
+    }
+    console.log(`il y'a ${comp} ${b}`)
+}
+
+
+countBs = (a) => {
+    return countChar(a, "B");
+}
+
+console.log(countBs('BOBOBOOB')) // 4B 
+
+console.log(countChar('CeCi est un C ', 'C')) // 3C
