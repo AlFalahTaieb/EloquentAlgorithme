@@ -46,8 +46,19 @@ let size = window.prompt('Enter la taille')
 res = ""
 for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-        res += (i + j) % 2 ? '#' : ' ' 
+        res += (i + j) % 2 ? '#' : ' '
     }
     res += "\n"
 }
 console.log(res)
+
+// Min Recursive ( minimum between two given value)
+
+min=(a, b) => {
+    if (a < b) {
+        return b
+    } else {
+        return a
+    }
+}
+    console.log(min(0,5))
