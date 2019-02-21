@@ -54,11 +54,26 @@ console.log(res)
 
 // Min Recursive ( minimum between two given value)
 
-min=(a, b) => {
+min = (a, b) => {
     if (a < b) {
         return b
     } else {
         return a
     }
 }
-    console.log(min(0,5))
+console.log(min(0, 5))
+
+// Recursion See if a given number is fisible by two or not 
+
+isEven = (a) => {
+    if (a == 0) {
+        return true
+    } else if (a == 1) {
+        return false
+    } else if (a < 0) {
+        return isEven(-a)
+    } else return isEven(a - 2)
+}
+console.log(isEven(50))
+console.log(isEven(75))
+console.log(isEven(-1))
