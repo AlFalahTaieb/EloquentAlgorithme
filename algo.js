@@ -154,10 +154,20 @@ console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]))
 arrayToList = (numbers) => {
 
     let obj = null
-    for (let i = numbers.length -1 ; i >= 0; i--) {
+    for (let i = numbers.length - 1; i >= 0; i--) {
         obj = { value: numbers[i], rest: obj }
     }
     return obj
 }
 
-console.log(arrayToList([1,2,3,4,5,6,7,8,9]))
+console.log(arrayToList([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+
+
+listToaray = (numbers) => {
+    let array = []
+
+    for (let i = list; i; i = i.rest) {
+        array.push(i.value)
+    }
+    return array
+}
