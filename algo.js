@@ -166,8 +166,12 @@ console.log(arrayToList([1, 2, 3, 4, 5, 6, 7, 8, 9]))
 listToaray = (numbers) => {
     let array = []
 
-    for (let i = list; i; i = i.rest) {
+    for (let i = numbers; i; i = i.rest) {
         array.push(i.value)
     }
     return array
+}
+
+preapend = (value, numbers) => {
+    return { value, rest: numbers }
 }
