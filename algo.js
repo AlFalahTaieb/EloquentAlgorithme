@@ -140,10 +140,24 @@ console.log(sum(range(7, 89)))
 //Reversing an array
 reverseArray = (numbers) => {
     let output = []
-    for (let i = numbers.length - 1; i >= 0; i--){
-         output.push(numbers[i])
+    for (let i = numbers.length - 1; i >= 0; i--) {
+        output.push(numbers[i])
     }
     return output
 }
 
 console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]))
+
+
+// Array To List
+
+arrayToList = (numbers) => {
+
+    let obj = null
+    for (let i = numbers.length -1 ; i >= 0; i--) {
+        obj = { value: numbers[i], rest: obj }
+    }
+    return obj
+}
+
+console.log(arrayToList([1,2,3,4,5,6,7,8,9]))
