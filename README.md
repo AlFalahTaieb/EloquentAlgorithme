@@ -15,4 +15,6 @@
 
  [Moz11 Destructuring ](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Affecter_par_d%C3%A9composition)
 
+ [ES6 In Depth: Destructuring](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/)
+
  23 Fab = Chapter 4 Finished Page 81
