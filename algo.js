@@ -181,3 +181,27 @@ nth = (list, n) => {
     else if (n == 0) return list.value;
     else return nth(list.rest, n - 1);
 }
+
+//Deep Compare
+
+//Compare between two object 
+
+let obj = { here: { is: 'Nana' }, object: 2 }
+let obj1 = { here: { is: 'Nana' }, object: 2 }
+deepEqual = (obj) => {
+    array = []
+    array1 = []
+    const finalArray = []
+    for (let value of Object.values(obj)) {
+        array.push(value)
+    }
+    for (let value of Object.values(obj1)) {
+        array1.push(value)
+    }
+    console.log(array)
+    console.log(array1)
+    console.log(JSON.stringify(array) === JSON.stringify(array1))
+}
+
+
+deepEqual(obj, obj1)
