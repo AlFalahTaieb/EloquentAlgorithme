@@ -18,3 +18,5 @@
  [ES6 In Depth: Destructuring](https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/)
 
  23 Fab = Chapter 4 Finished Page 81
+
+ Higher-Order Functions Page 82
