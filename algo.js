@@ -205,3 +205,5 @@ deepEqual = (obj) => {
 
 
 deepEqual(obj, obj1)
+
+//Higher-Order Functions Page 82
