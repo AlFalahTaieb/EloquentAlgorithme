@@ -207,3 +207,11 @@ deepEqual = (obj) => {
 deepEqual(obj, obj1)
 
 //Higher-Order Functions Page 82
+
+plusGrand=(n)=>{
+return m => m>n;
+}
+
+plusGrand7=plusGrand(7)
+
+console.log(plusGrand7(5))
