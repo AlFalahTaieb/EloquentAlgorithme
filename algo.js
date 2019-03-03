@@ -217,3 +217,6 @@ plusGrand7=plusGrand(7)
 console.log(plusGrand7(5))
 
 console.log(plusGrand7(7))
+
+
+console.log(plusGrand7(9))
