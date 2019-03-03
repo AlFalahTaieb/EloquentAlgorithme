@@ -220,3 +220,7 @@ console.log(plusGrand7(7))
 
 
 console.log(plusGrand7(9))
+
+
+
+console.log(plusGrand7(14))
