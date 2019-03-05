@@ -233,5 +233,23 @@ reduce = (array, c, s) => {
     return current
 }
 
-console.log(reduce([1, 2, 3, 4,5,6,7,8,9], (a, b) => a + b, 0))
-//
+console.log(reduce([1, 2, 3, 4, 5, 6, 7, 8, 9], (a, b) => a + b, 0))
+
+
+
+reduceArray = (array) => {
+    let array1 = []
+    for (let element of array) {
+        array1.push(array[element])
+    }
+    return array1
+}
+
+
+loop = (start, test, update) => {
+    for (let value = start; test(value); value = update(value)) {
+        console.log(value);
+    }
+}
+
+loop(7, n => n > 0, n => n - 1);
