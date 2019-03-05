@@ -253,3 +253,13 @@ loop = (start, test, update) => {
 }
 
 loop(7, n => n > 0, n => n - 1);
+
+//This one returns true when the given function returns true for every element in the array
+
+EveryArr = (array, test) => {
+    for (let element of array) {
+        if (array[element] > test){
+            return true
+        } return false
+    }
+}
