@@ -208,11 +208,11 @@ deepEqual(obj, obj1)
 
 //Higher-Order Functions Page 82
 
-plusGrand=(n)=>{
-return m => m>n;
+plusGrand = (n) => {
+    return m => m > n;
 }
 
-plusGrand7=plusGrand(7)
+plusGrand7 = plusGrand(7)
 
 console.log(plusGrand7(5))
 
@@ -221,6 +221,17 @@ console.log(plusGrand7(7))
 
 console.log(plusGrand7(9))
 
-
-
 console.log(plusGrand7(14))
+
+// Function reduce 
+
+reduce = (array, c, s) => {
+    let current = s
+    for (let element of array) {
+        current = c(current, element)
+    }
+    return current
+}
+
+console.log(reduce([1, 2, 3, 4,5,6,7,8,9], (a, b) => a + b, 0))
+//
