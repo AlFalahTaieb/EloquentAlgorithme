@@ -272,3 +272,10 @@ console.log(`tyb aime'${line}'`)
 }
 taieb.speak('eya')
 
+let Run= function(distance){
+    console.log(`Mr ${this.name} is coming to the end of a very long road, After more than ${distance}.`)
+}
+
+let Runner = {name:'Forest Gump',Run}
+
+Runner.Run('15,000 miles')
