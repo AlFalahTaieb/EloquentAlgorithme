@@ -263,3 +263,12 @@ EveryArr = (array, test) => {
         } return false
     }
 }
+
+//The Secret Life of Objects
+
+let taieb = {}
+taieb.speak=(line)=>{
+console.log(`tyb aime'${line}'`)
+}
+taieb.speak('eya')
+
