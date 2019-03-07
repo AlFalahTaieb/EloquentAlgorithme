@@ -279,3 +279,14 @@ let Run= function(distance){
 let Runner = {name:'Forest Gump',Run}
 
 Runner.Run('15,000 miles')
+
+
+// With Arrow Function we can't use this
+
+let Run= (distance)=>{
+    console.log(`Mr ${Runner.name} is coming to the end of a very long road, After more than ${distance}.`)
+}
+
+let Runner = {name:'Forest Gump',Run}
+
+Runner.Run('15,000 miles')
