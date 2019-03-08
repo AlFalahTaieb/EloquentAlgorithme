@@ -260,7 +260,7 @@ loop(7, n => n > 0, n => n - 1);
 
 EveryArr = (array, test) => {
     for (let element of array) {
-        if (array[element] > test){
+        if (array[element] > test) {
             return true
         } return false
     }
@@ -269,27 +269,27 @@ EveryArr = (array, test) => {
 //The Secret Life of Objects
 
 let taieb = {}
-taieb.speak=(line)=>{
-console.log(`tyb aime'${line}'`)
+taieb.speak = (line) => {
+    console.log(`tyb aime'${line}'`)
 }
 taieb.speak('eya')
 
-let Run= function(distance){
+let Run = function (distance) {
     console.log(`Mr ${this.name} is coming to the end of a very long road, After more than ${distance}.`)
 }
 
-let Runner = {name:'Forest Gump',Run}
+let Runner = { name: 'Forest Gump', Run }
 
 Runner.Run('15,000 miles')
 
 
 // With Arrow Function we can't use this
 
-let Run= (distance)=>{
+let Run = (distance) => {
     console.log(`Mr ${Runner.name} is coming to the end of a very long road, After more than ${distance}.`)
 }
 
-let Runner = {name:'Forest Gump',Run}
+let Runner = { name: 'Forest Gump', Run }
 
 Runner.Run('15,000 miles')
 
@@ -297,9 +297,36 @@ Runner.Run('15,000 miles')
 // MAPS
 
 let Abbility = new Map()
-Abbility.set('Mercy','Healing')
-Abbility.set('Ana','Support/Sniper')
-Abbility.set('Reinhardt','Tank')
+Abbility.set('Mercy', 'Healing')
+Abbility.set('Ana', 'Support/Sniper')
+Abbility.set('Reinhardt', 'Tank')
 
 
 console.log(`Ana is ${Abbility.get('Ana')}`) // Ana is Support/Sniper
+
+
+//Class Getter & Setter 
+
+ArrayHeal =  ['Ana', 'Mercy']
+ArrayTank = ['Rein', 'Winston', 'Orisa']
+ArrayDc = ['Windowmaker', 'Trace', 'Sombra']
+
+class Heros {
+
+    constructor(heroClass) {
+        this.heroClass = heroClass
+    }
+
+    get Champion() {
+        if (ArrayHeal.includes(this.heroClass)) {
+            return console.log(`Ìt's a Healer`)
+        } else if (ArrayTank.includes(this.heroClass)) {
+            return console.log('This is a Tank')
+        } else if (ArrayDc.includes(this.heroClass)) return console.log('This is a DC ')
+    }
+
+}
+
+let Test = new Heros('Ana')
+
+console.log(Test.Champion)
