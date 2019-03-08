@@ -204,6 +204,8 @@ deepEqual = (obj) => {
 }
 
 
+
+
 deepEqual(obj, obj1)
 
 //Higher-Order Functions Page 82
@@ -290,3 +292,14 @@ let Run= (distance)=>{
 let Runner = {name:'Forest Gump',Run}
 
 Runner.Run('15,000 miles')
+
+
+// MAPS
+
+let Abbility = new Map()
+Abbility.set('Mercy','Healing')
+Abbility.set('Ana','Support/Sniper')
+Abbility.set('Reinhardt','Tank')
+
+
+console.log(`Ana is ${Abbility.get('Ana')}`) // Ana is Support/Sniper
