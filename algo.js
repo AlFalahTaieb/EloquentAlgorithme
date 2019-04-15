@@ -307,7 +307,7 @@ console.log(`Ana is ${Abbility.get('Ana')}`) // Ana is Support/Sniper
 
 //Class Getter & Setter 
 
-ArrayHeal =  ['Ana', 'Mercy']
+ArrayHeal = ['Ana', 'Mercy']
 ArrayTank = ['Rein', 'Winston', 'Orisa']
 ArrayDc = ['Windowmaker', 'Trace', 'Sombra']
 
@@ -334,29 +334,50 @@ console.log(Test.Champion)
 // Rebot Project
 
 const roads = [
-    "Alice's House-Bob's House",   "Alice's House-Cabin",
-    "Alice's House-Post Office",   "Bob's House-Town Hall",
+    "Alice's House-Bob's House", "Alice's House-Cabin",
+    "Alice's House-Post Office", "Bob's House-Town Hall",
     "Daria's House-Ernie's House", "Daria's House-Town Hall",
     "Ernie's House-Grete's House", "Grete's House-Farm",
-    "Grete's House-Shop",          "Marketplace-Farm",
-    "Marketplace-Post Office",     "Marketplace-Shop",
-    "Marketplace-Town Hall",       "Shop-Town Hall"
-  ]
+    "Grete's House-Shop", "Marketplace-Farm",
+    "Marketplace-Post Office", "Marketplace-Shop",
+    "Marketplace-Town Hall", "Shop-Town Hall"
+]
 
-   buildGraph=(edges)=>{
+buildGraph = (edges) => {
     let graph = Object.create(null)
-     addEdge=(from, to) =>{
-      if (graph[from] == null) {
-        graph[from] = [to]
-      } else {
-        graph[from].push(to)
-      }
+    addEdge = (from, to) => {
+        if (graph[from] == null) {
+            graph[from] = [to]
+        } else {
+            graph[from].push(to)
+        }
     }
     for (let [from, to] of edges.map(r => r.split("-"))) {
-      addEdge(from, to)
-      addEdge(to, from)
+        addEdge(from, to)
+        addEdge(to, from)
     }
     return graph
-  }
-  
-  const roadGraph = buildGraph(roads);
+}
+
+const roadGraph = buildGraph(roads);
+
+// Password salting 
+rot13 = (str) => {
+    // Split str into a character array
+    return str.split('')
+        // Iterate over each character in the array
+        .map.call(str, function (char) {
+            // Convert char to a character code
+            x = char.charCodeAt(0);
+            // Checks if character lies between A-Z
+            if (x < 65 || x > 90) {
+                return String.fromCharCode(x); // Return un-converted character
+            }
+            //N = ASCII 78, if the character code is less than 78, shift forward 13 places
+            else if (x < 78) {
+                return String.fromCharCode(x + 13);
+            }
+            // Otherwise shift the character 13 places backward
+            return String.fromCharCode(x - 13);
+        }).join(''); // Rejoin the array into a string
+}
