@@ -19,14 +19,14 @@ range = (start, stop, step) => {
 }
 generateCode = (num) = {
 
-  UC=String.fromCharCode.apply(String,range(65,90)).split(''),
-  LC=range(97,122),
-  Num=range(48,57),
-  SC1=range(32,47),
-  SC2=range(58,64),
-  SC3=range(91,96),
-  SC4=range(123,126),
-  
+  UC = String.fromCharCode.apply(String, range(65, 90)).split(''),
+  LC = String.fromCharCode.apply(String, range(97, 122)).split(''),
+  Num = String.fromCharCode.apply(String, range(48, 57)).split(''),
+  SC1 = String.fromCharCode.apply(String,range(32,47)).split(''),
+  SC2 = String.fromCharCode.apply(String,range(58,64)).split(''),
+  SC3 = String.fromCharCode.apply(String,range(91,96)).split(''),
+  SC4 = String.fromCharCode.apply(String,range(123,126)).split(''),
+
 
 
 }
