@@ -10,25 +10,25 @@ const rl = readline.createInterface({
   prompt: 'Generate a new password > '
 })
 
+range = (start, stop, step) => {
+  let finalArray = [start], b = start
+  while (b < stop) {
+    finalArray.push(b += step || 1);
+  }
+  return finalArray
+}
+generateCode = (num) = {
 
-rot13 = (str) => {
-  // Split str into a character array
-  return console.log(str.split('')
-  // Iterate over each character in the array
-  .map.call(str, function (char) {
-  // Convert char to a character code
-  x = char.charCodeAt(0)
-  // Checks if character lies between A-Z
-  if (x < 65 || x > 90) {
-  return String.fromCharCode(x); // Return un-converted character
-  }
-  //N = ASCII 78, if the character code is less than 78, shift forward 13 places
-  else if (x < 78) {
-  return String.fromCharCode(x + 13)
-  }
-  // Otherwise shift the character 13 places backward
-  return String.fromCharCode(x - 13)
-  }).join('')) // Rejoin the array into a string
+  UC=String.fromCharCode.apply(String,range(65,90)).split(''),
+  LC=range(97,122),
+  Num=range(48,57),
+  SC1=range(32,47),
+  SC2=range(58,64),
+  SC3=range(91,96),
+  SC4=range(123,126),
+  
+
+
 }
 
 rl.prompt();
