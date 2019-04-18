@@ -1,0 +1,23 @@
+{
+  "name": "eloquentalgorithme",
+  "version": "1.0.0",
+  "description": "![EloquentJavascript](https://eloquentjavascript.net/img/cover.jpg)",
+  "main": "algo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlFalahTaieb/EloquentAlgorithme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlFalahTaieb/EloquentAlgorithme/issues"
+  },
+  "homepage": "https://github.com/AlFalahTaieb/EloquentAlgorithme#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "qs": "^6.7.0"
+  }
+}
