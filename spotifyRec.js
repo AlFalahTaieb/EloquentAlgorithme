@@ -1,12 +1,19 @@
 const express = require('express')
-const app = express()
-const PORT = 3000
+const fs = require("fs")
 let querystring = require('querystring')
 const secret = require('./secret.js')
+let ejs = require('ejs')
+
+
+
+
+const app = express()
+const PORT = 3000
+
 let client_id = secret.clientId
 let redirect_uri = secret.redirectUri;
 let client_secret = secret.clientSecret
-const fs = require("fs")
+
 
 let request = require('request')
 
