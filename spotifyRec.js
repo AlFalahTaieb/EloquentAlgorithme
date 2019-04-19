@@ -6,7 +6,6 @@ let ejs = require('ejs')
 
 
 
-
 const app = express()
 const PORT = 3000
 
@@ -16,6 +15,8 @@ let client_secret = secret.clientSecret
 
 
 let request = require('request')
+
+app.set('view engine', 'ejs');
 
 process.env.REDIRECT_URI ||
     `http://localhost:${PORT}/callback`
@@ -29,6 +30,10 @@ app.get('/login', function (req, res) {
             redirect_uri
         }))
 })
+app.get('/', (req, res) => {
+    res.render('page/index');
+})
+
 
 app.get('/callback', function (req, res) {
     let code = req.query.code || null
@@ -46,27 +51,29 @@ app.get('/callback', function (req, res) {
         },
         json: true
     }
-    
+
     request.post(authOptions, function (error, response, body) {
-      
+
         let token = body.access_token
         let uri = `http://localhost:${PORT}`
         console.log(token)
-        fs.writeFileSync('token.json',JSON.stringify(token), 'utf8')
+        fs.writeFileSync('token.txt',token, 'utf8')
         // res.redirect(uri + '?access_token=' + token)
-        res.sendFile(__dirname + '/index.html');
+        res.render('page/callback');
     })
 
 })
 
 app.get('/token', (req, res) => {
 
-        fs.readFile('token.json', 'utf8', function(err, data) {  
-            if (err) throw err;
-            res.send(data)
-        })
- 
- 
+    fs.readFile('token.txt', 'utf8', function (err, data) {
+        if (err) throw err;
+        global_data = data;
+        console.log(global_data);
+        res.render('page/token');
+    })
+
+
 })
 
 
