@@ -381,3 +381,12 @@ rot13 = (str) => {
             return String.fromCharCode(x - 13);
         }).join(''); // Rejoin the array into a string
 }
+
+
+//Foreach
+
+let numbers = [1,2,3,4,5,6,7,8,9]
+
+numbers.forEach(element => {
+    console.log(element+1)
+})
