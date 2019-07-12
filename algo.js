@@ -384,9 +384,31 @@ rot13 = (str) => {
 
 
 //Foreach
-
-let numbers = [1,2,3,4,5,6,7,8,9]
-
+const ul = document.querySelector('.numbers')
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+let html = ``
 numbers.forEach(element => {
-    console.log(element+1)
+    console.log(element + 1)
 })
+
+ul.innerHTML = html
+
+
+
+//LengthOfLongestSubstring
+
+LengthOfLongestSubstring = (s) => {
+    let charsMap = {}
+    let start = 0
+    let maxLength = 0
+
+    for (let i = 0; i < s.length; i++) {
+        const endChar = s[i]
+        if (charsMap[endChar] >= start) {
+            start = charsMap[endChar] + 1
+        }
+        charsMap[endChar] = i
+        maxLength = Math.max(maxLength, i - start + 1)
+    }
+    return maxLength
+}
