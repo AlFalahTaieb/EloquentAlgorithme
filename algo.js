@@ -1,3 +1,5 @@
+import { checkServerIdentity } from "tls";
+
 //Write a loop that makes seven calls to console.log to output the following triangle
 
 let x = 0
@@ -413,3 +415,31 @@ lengthOfLongestSubstring = (s) => {
     return maxLength
 }
 
+//longestPalindrome ( https://leetcode.com/problems/longest-palindrome/ )
+
+longestPalindrome = (s) => {
+    
+    let startInd = 0
+    let maxLength = 1
+
+    checkServerIdentity = (l, r) => {
+        while (l >= 0 && r < s.length && s[l] === s[r]) {
+            const currentPalLentgh = r - l + 1
+            if (currentPalLentgh > maxLength) {
+                maxLength=currentPalLentgh
+                startInd = l
+            }
+            l-=1
+            r+=1
+        }
+}
+        for ( let i =0 ; i<s.length;i++){
+            checkServerIdentity(i-1,i+1)
+            checkServerIdentity(i,i+1)
+        
+
+
+    }
+            return s.slice(startInd,startInd + maxLength)
+}
+longestPalindrome('abccccdd') //cccc
