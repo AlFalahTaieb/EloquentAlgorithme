@@ -443,3 +443,34 @@ longestPalindrome = (s) => {
             return s.slice(startInd,startInd + maxLength)
 }
 longestPalindrome('abccccdd') //cccc
+
+
+
+// Valid Parentheses https://leetcode.com/problems/valid-parentheses/
+isValid=(s)=> {
+    let acceptedChar = {
+     ')' : '(',
+     '}' : '{',
+     ']' : '['
+ }
+    let charStack=[]
+    
+    //To Validate Input 
+       if(s===null || s===undefined)
+     return false
+ for ( let i=0; i<s.length;i++){
+if(s[i] === "(" || s[i] === "[" || s[i] === "{"){
+         charStack.push(s[i]);
+     }
+     else{
+         if(charStack[charStack.length - 1] === acceptedChar[s[i]]){
+             charStack.pop();
+         }
+         else return false;
+     }
+ }
+ return charStack.length === 0 ? true : false;
+}
+isValid("()") // true
+isValid("()[]{}") // ftrue
+isValid("([)]") // false
