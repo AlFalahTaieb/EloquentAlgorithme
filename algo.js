@@ -551,3 +551,27 @@ twoSum = (nums, target) => {
     }
     }
     findMedianSortedArrays([1,3],[2,4])
+// Reverse Integer https://leetcode.com/problems/reverse-integer/
+
+    reverseInteger=(x)=>{
+        if(x.toString().slice(-1)=='0'){
+      x.toString().slice(0, -1)
+        }
+        if((x.toString().charAt(0))==='-'){
+        reverseX = x
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+        return parseInt(reverseX)* -1
+        }else {
+        reverseX = x
+        .toString()
+        .split('')
+        .reverse()
+        .join('')
+      
+        return parseInt(reverseX)
+      }}
+      
+      reverseInteger(-678)
