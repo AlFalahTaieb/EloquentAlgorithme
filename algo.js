@@ -530,3 +530,24 @@ twoSum = (nums, target) => {
   // twoSum([2, 7, 11, 12, 13, 15, 19, 32], 15)
   // twoSum([2,3,4],6)
   twoSum([0,4,3,0],0)
+
+
+//findMedianSortedArrays https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/
+
+
+  findMedianSortedArrays = (num1, num2) => {
+    let arrayCombined = num1.concat(num2)
+    arrayCombined.sort((a,b)=>{
+      return a-b
+    })
+    
+    const median = arrayCombined.length /2,
+    result = arrayCombined.length % 2
+    
+    if (result> 0){
+      return arrayCombined[Math.floor(arrayCombined.length / 2)]
+    } else {
+      return (arrayCombined[median]+arrayCombined[median - 1 ])/2
+    }
+    }
+    findMedianSortedArrays([1,3],[2,4])
