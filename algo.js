@@ -481,7 +481,6 @@ isValid("([)]") // false
 groupAnagrams = (strs) => {
 
     let grouped = {}
-    let arr = []
     for (let i = 0; i < strs.length; i++) {
         const word = strs[i]
         const key = word.split('').sort().join('')
@@ -508,3 +507,26 @@ isPalindrome = (s) => {
 isPalindrome('A man, a plan, a canal: Panama')
 
 
+// Two Sum https://leetcode.com/problems/two-sum/
+twoSum = (nums, target) => {
+    array=[]
+    for (let i = nums.length - 1; i >= 0; i--) {
+      if (nums[i] > target) {
+        nums.splice(i, 1)
+      }
+    }
+    for (let i = 0; i < nums.length; i++) {
+      for (let j = i + 1; j < nums.length; j++) {
+        if (nums[i] + nums[j] === target) {
+           array.push(i) && array.push(j)
+        }
+        
+      }
+  
+    }
+  console.log(array)
+  }
+  
+  // twoSum([2, 7, 11, 12, 13, 15, 19, 32], 15)
+  // twoSum([2,3,4],6)
+  twoSum([0,4,3,0],0)
