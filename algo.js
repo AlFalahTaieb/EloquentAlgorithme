@@ -474,3 +474,23 @@ if(s[i] === "(" || s[i] === "[" || s[i] === "{"){
 isValid("()") // true
 isValid("()[]{}") // ftrue
 isValid("([)]") // false
+
+//groupAnagrams(strs) https://leetcode.com/problems/group-anagrams/
+
+
+groupAnagrams=(strs)=> {
+
+    let grouped = {}
+    let arr = []
+    for (let i = 0; i < strs.length; i++) {
+        const word = strs[i]
+        const key = word.split('').sort().join('')
+      if(!grouped[key]){
+        grouped[key]=[]
+      }
+    grouped[key].push(word)
+    }
+      return Object.values(grouped)
+    
+    }
+    groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
