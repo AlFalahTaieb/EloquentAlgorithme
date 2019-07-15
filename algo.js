@@ -418,7 +418,7 @@ lengthOfLongestSubstring = (s) => {
 //longestPalindrome ( https://leetcode.com/problems/longest-palindrome/ )
 
 longestPalindrome = (s) => {
-    
+
     let startInd = 0
     let maxLength = 1
 
@@ -426,50 +426,50 @@ longestPalindrome = (s) => {
         while (l >= 0 && r < s.length && s[l] === s[r]) {
             const currentPalLentgh = r - l + 1
             if (currentPalLentgh > maxLength) {
-                maxLength=currentPalLentgh
+                maxLength = currentPalLentgh
                 startInd = l
             }
-            l-=1
-            r+=1
+            l -= 1
+            r += 1
         }
-}
-        for ( let i =0 ; i<s.length;i++){
-            checkServerIdentity(i-1,i+1)
-            checkServerIdentity(i,i+1)
-        
+    }
+    for (let i = 0; i < s.length; i++) {
+        checkServerIdentity(i - 1, i + 1)
+        checkServerIdentity(i, i + 1)
+
 
 
     }
-            return s.slice(startInd,startInd + maxLength)
+    return s.slice(startInd, startInd + maxLength)
 }
 longestPalindrome('abccccdd') //cccc
 
 
 
 // Valid Parentheses https://leetcode.com/problems/valid-parentheses/
-isValid=(s)=> {
+isValid = (s) => {
     let acceptedChar = {
-     ')' : '(',
-     '}' : '{',
-     ']' : '['
- }
-    let charStack=[]
-    
+        ')': '(',
+        '}': '{',
+        ']': '['
+    }
+    let charStack = []
+
     //To Validate Input 
-       if(s===null || s===undefined)
-     return false
- for ( let i=0; i<s.length;i++){
-if(s[i] === "(" || s[i] === "[" || s[i] === "{"){
-         charStack.push(s[i]);
-     }
-     else{
-         if(charStack[charStack.length - 1] === acceptedChar[s[i]]){
-             charStack.pop();
-         }
-         else return false;
-     }
- }
- return charStack.length === 0 ? true : false;
+    if (s === null || s === undefined)
+        return false
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "(" || s[i] === "[" || s[i] === "{") {
+            charStack.push(s[i]);
+        }
+        else {
+            if (charStack[charStack.length - 1] === acceptedChar[s[i]]) {
+                charStack.pop();
+            }
+            else return false;
+        }
+    }
+    return charStack.length === 0 ? true : false;
 }
 isValid("()") // true
 isValid("()[]{}") // ftrue
@@ -478,19 +478,33 @@ isValid("([)]") // false
 //groupAnagrams(strs) https://leetcode.com/problems/group-anagrams/
 
 
-groupAnagrams=(strs)=> {
+groupAnagrams = (strs) => {
 
     let grouped = {}
     let arr = []
     for (let i = 0; i < strs.length; i++) {
         const word = strs[i]
         const key = word.split('').sort().join('')
-      if(!grouped[key]){
-        grouped[key]=[]
-      }
-    grouped[key].push(word)
+        if (!grouped[key]) {
+            grouped[key] = []
+        }
+        grouped[key].push(word)
     }
-      return Object.values(grouped)
-    
-    }
-    groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+    return Object.values(grouped)
+
+}
+groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+
+
+
+
+//Valid Palindrome https://leetcode.com/problems/valid-palindrome/
+isPalindrome = (s) => {
+    let newString = s.replace(/[^A-Z0-9]/ig, "").toLowerCase()
+    let reversedNewString = newString.split("").reverse().join("").toLowerCase()
+    return newString === reversedNewString ? true : false
+}
+
+isPalindrome('A man, a plan, a canal: Panama')
+
+
