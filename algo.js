@@ -554,50 +554,83 @@ findMedianSortedArrays([1, 3], [2, 4])
 // Reverse Integer https://leetcode.com/problems/reverse-integer/
 
 
-let reverse = function(x) {
+let reverse = function (x) {
     const max = 2 ** 31 - 1,
-          min = -1 * 2 ** 31,
-   
-  
-         reverseX = x
-              .toString()
-              .split('')
-              .reverse()
-              .join(''),
-              TestingX=reverseX.slice(0, -1)
-  if(x.toString().slice(-1)=='0'){
-  x.toString().slice(0, -1)
-  }
-  console.log(TestingX)
-  console.log(reverseX)
-  if(reverseX.slice(-1)==='-' && TestingX<max && x>min){
-  return parseInt(reverseX)* -1
-  }else if(reverseX<max &&  x>min) {
-  
-  
-  return parseInt(reverseX)
-  }else return 0 }
-  
-  reverse(-1563847412)
-
-  // OR
+        min = -1 * 2 ** 31,
 
 
-var reverse = function(x) {
+        reverseX = x
+            .toString()
+            .split('')
+            .reverse()
+            .join(''),
+        TestingX = reverseX.slice(0, -1)
+    if (x.toString().slice(-1) == '0') {
+        x.toString().slice(0, -1)
+    }
+    console.log(TestingX)
+    console.log(reverseX)
+    if (reverseX.slice(-1) === '-' && TestingX < max && x > min) {
+        return parseInt(reverseX) * -1
+    } else if (reverseX < max && x > min) {
+
+
+        return parseInt(reverseX)
+    } else return 0
+}
+
+reverse(-1563847412)
+
+// OR
+
+
+var reverse = function (x) {
     let finalInt;
     if (parseInt(x) < 0) {
-      finalInt = parseInt(x.toString().split('').reverse().join('').toString()) * -1
+        finalInt = parseInt(x.toString().split('').reverse().join('').toString()) * -1
     } else {
-      finalInt = parseInt(x.toString().split('').reverse().join('').toString())
+        finalInt = parseInt(x.toString().split('').reverse().join('').toString())
     }
-  return (Math.abs(Math.pow(2, 31) - 1) < finalInt) ? 0 : finalInt
-  }
-  
-  
-  reverseInteger(-150)
-  
-  var reverse = function(x) {
-      x = x.toString().split("");
-      x = x[0] == "-" ? -Number(x.slice(1).reverse().join("")): Number(x.reverse().join(""));
-      return x < -Math.pow(2, 31) || x > Math.pow(2, 31) - 1 ? 0: x;
-  };
+    return (Math.abs(Math.pow(2, 31) - 1) < finalInt) ? 0 : finalInt
+}
+
+reverse(-150)
+
+var reverse = function (x) {
+    x = x.toString().split("")
+    x = x[0] == "-" ? -Number(x.slice(1).reverse().join("")) : Number(x.reverse().join(""))
+    return x < -Math.pow(2, 31) || x > Math.pow(2, 31) - 1 ? 0 : x
+}
+// String to Integer (atoi) https://leetcode.com/problems/string-to-integer-atoi/ **Med**
+
+/** THIS SOLUTOION I NEED TO FIND A WAY TO FIX THE ',' PROBLEM :'( */
+
+var myAtoi = function (x) {
+    finalX = x.replace(/\D/g, '')
+    let finalInt
+    console.log(x)
+    if (isNaN(x.charAt(0)) && x.charAt(0) != '-') {
+        return 0
+    }
+
+    else if (parseInt(x) < 0) {
+        finalInt = parseInt(finalX.toString().split('').join('').toString()) * -1
+    } else {
+        finalInt = parseInt(finalX.toString().split('').join('').toString())
+    }
+    return (Math.abs(Math.pow(2, 31) - 1) < finalInt) ? 0 : finalInt
+}
+
+myAtoi('4bc89 s')
+
+// Solution Working
+
+let myAtoi = function (x) {
+    const MIN = Math.pow(-2, 31)
+    const MAX = Math.pow(2, 31) - 1
+    x = parseInt(x)
+    if (isNaN(x)) return 0
+    else if (x < MIN) return MIN
+    else if (x > MAX) return MAX
+    else return x
+}
