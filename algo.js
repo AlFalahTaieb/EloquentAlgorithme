@@ -509,69 +509,101 @@ isPalindrome('A man, a plan, a canal: Panama')
 
 // Two Sum https://leetcode.com/problems/two-sum/
 twoSum = (nums, target) => {
-    array=[]
+    array = []
     for (let i = nums.length - 1; i >= 0; i--) {
-      if (nums[i] > target) {
-        nums.splice(i, 1)
-      }
+        if (nums[i] > target) {
+            nums.splice(i, 1)
+        }
     }
     for (let i = 0; i < nums.length; i++) {
-      for (let j = i + 1; j < nums.length; j++) {
-        if (nums[i] + nums[j] === target) {
-           array.push(i) && array.push(j)
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                array.push(i) && array.push(j)
+            }
+
         }
-        
-      }
-  
+
     }
-  console.log(array)
-  }
-  
-  // twoSum([2, 7, 11, 12, 13, 15, 19, 32], 15)
-  // twoSum([2,3,4],6)
-  twoSum([0,4,3,0],0)
+    console.log(array)
+}
+
+// twoSum([2, 7, 11, 12, 13, 15, 19, 32], 15)
+// twoSum([2,3,4],6)
+twoSum([0, 4, 3, 0], 0)
 
 
 //findMedianSortedArrays https://leetcode.com/problems/median-of-two-sorted-arrays/submissions/
 
 
-  findMedianSortedArrays = (num1, num2) => {
+findMedianSortedArrays = (num1, num2) => {
     let arrayCombined = num1.concat(num2)
-    arrayCombined.sort((a,b)=>{
-      return a-b
+    arrayCombined.sort((a, b) => {
+        return a - b
     })
-    
-    const median = arrayCombined.length /2,
-    result = arrayCombined.length % 2
-    
-    if (result> 0){
-      return arrayCombined[Math.floor(arrayCombined.length / 2)]
+
+    const median = arrayCombined.length / 2,
+        result = arrayCombined.length % 2
+
+    if (result > 0) {
+        return arrayCombined[Math.floor(arrayCombined.length / 2)]
     } else {
-      return (arrayCombined[median]+arrayCombined[median - 1 ])/2
+        return (arrayCombined[median] + arrayCombined[median - 1]) / 2
     }
-    }
-    findMedianSortedArrays([1,3],[2,4])
+}
+findMedianSortedArrays([1, 3], [2, 4])
 // Reverse Integer https://leetcode.com/problems/reverse-integer/
 
-    reverseInteger=(x)=>{
-        if(x.toString().slice(-1)=='0'){
-      x.toString().slice(0, -1)
-        }
-        if((x.toString().charAt(0))==='-'){
+reverseInteger = (x) => {
+    if (x.toString().slice(-1) == '0') {
+        x.toString().slice(0, -1)
+    }
+    if ((x.toString().charAt(0)) === '-') {
         reverseX = x
-        .toString()
-        .split('')
-        .reverse()
-        .join('')
-        return parseInt(reverseX)* -1
-        }else {
+            .toString()
+            .split('')
+            .reverse()
+            .join('')
+        return parseInt(reverseX) * -1
+    } else {
         reverseX = x
-        .toString()
-        .split('')
-        .reverse()
-        .join('')
-      
+            .toString()
+            .split('')
+            .reverse()
+            .join('')
+
         return parseInt(reverseX)
-      }}
-      
-      reverseInteger(-678)
+    }
+}
+
+reverseInteger(-678)
+// OR //
+reverseInteger = (x) => {
+    reverseString = (str) => {
+        let reversed = '';
+        for (const character of str) {
+            reversed = character + reversed
+        }
+        return reversed
+    }
+
+
+    if (x.toString().slice(-1) == '0') {
+        x.toString().slice(0, -1)
+    }
+    if ((x.toString().charAt(0)) === '-') {
+        reverseX = reverseString(x.toString())
+
+            .split('')
+            .join('')
+        return parseInt(reverseX) * -1
+    } else {
+        reverseX = reverseString(x.toString())
+
+            .split('')
+            .join('')
+
+        return parseInt(reverseX)
+    }
+}
+
+reverseInteger(-123)
