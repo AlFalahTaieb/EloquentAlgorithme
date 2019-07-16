@@ -553,57 +553,51 @@ findMedianSortedArrays = (num1, num2) => {
 findMedianSortedArrays([1, 3], [2, 4])
 // Reverse Integer https://leetcode.com/problems/reverse-integer/
 
-reverseInteger = (x) => {
-    if (x.toString().slice(-1) == '0') {
-        x.toString().slice(0, -1)
-    }
-    if ((x.toString().charAt(0)) === '-') {
-        reverseX = x
-            .toString()
-            .split('')
-            .reverse()
-            .join('')
-        return parseInt(reverseX) * -1
+
+let reverse = function(x) {
+    const max = 2 ** 31 - 1,
+          min = -1 * 2 ** 31,
+   
+  
+         reverseX = x
+              .toString()
+              .split('')
+              .reverse()
+              .join(''),
+              TestingX=reverseX.slice(0, -1)
+  if(x.toString().slice(-1)=='0'){
+  x.toString().slice(0, -1)
+  }
+  console.log(TestingX)
+  console.log(reverseX)
+  if(reverseX.slice(-1)==='-' && TestingX<max && x>min){
+  return parseInt(reverseX)* -1
+  }else if(reverseX<max &&  x>min) {
+  
+  
+  return parseInt(reverseX)
+  }else return 0 }
+  
+  reverse(-1563847412)
+
+  // OR
+
+
+var reverse = function(x) {
+    let finalInt;
+    if (parseInt(x) < 0) {
+      finalInt = parseInt(x.toString().split('').reverse().join('').toString()) * -1
     } else {
-        reverseX = x
-            .toString()
-            .split('')
-            .reverse()
-            .join('')
-
-        return parseInt(reverseX)
+      finalInt = parseInt(x.toString().split('').reverse().join('').toString())
     }
-}
-
-reverseInteger(-678)
-// OR //
-reverseInteger = (x) => {
-    reverseString = (str) => {
-        let reversed = '';
-        for (const character of str) {
-            reversed = character + reversed
-        }
-        return reversed
-    }
-
-
-    if (x.toString().slice(-1) == '0') {
-        x.toString().slice(0, -1)
-    }
-    if ((x.toString().charAt(0)) === '-') {
-        reverseX = reverseString(x.toString())
-
-            .split('')
-            .join('')
-        return parseInt(reverseX) * -1
-    } else {
-        reverseX = reverseString(x.toString())
-
-            .split('')
-            .join('')
-
-        return parseInt(reverseX)
-    }
-}
-
-reverseInteger(-123)
+  return (Math.abs(Math.pow(2, 31) - 1) < finalInt) ? 0 : finalInt
+  }
+  
+  
+  reverseInteger(-150)
+  
+  var reverse = function(x) {
+      x = x.toString().split("");
+      x = x[0] == "-" ? -Number(x.slice(1).reverse().join("")): Number(x.reverse().join(""));
+      return x < -Math.pow(2, 31) || x > Math.pow(2, 31) - 1 ? 0: x;
+  };
