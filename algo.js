@@ -584,7 +584,7 @@ reverse(-1563847412)
 // OR
 
 
-var reverse = function (x) {
+let reverse = function (x) {
     let finalInt;
     if (parseInt(x) < 0) {
         finalInt = parseInt(x.toString().split('').reverse().join('').toString()) * -1
@@ -596,7 +596,7 @@ var reverse = function (x) {
 
 reverse(-150)
 
-var reverse = function (x) {
+let reverse = function (x) {
     x = x.toString().split("")
     x = x[0] == "-" ? -Number(x.slice(1).reverse().join("")) : Number(x.reverse().join(""))
     return x < -Math.pow(2, 31) || x > Math.pow(2, 31) - 1 ? 0 : x
@@ -605,7 +605,7 @@ var reverse = function (x) {
 
 /** THIS SOLUTOION I NEED TO FIND A WAY TO FIX THE ',' PROBLEM :'( */
 
-var myAtoi = function (x) {
+let myAtoi = function (x) {
     finalX = x.replace(/\D/g, '')
     let finalInt
     console.log(x)
@@ -634,3 +634,16 @@ let myAtoi = function (x) {
     else if (x > MAX) return MAX
     else return x
 }
+
+// Check if a nmber is a Palindrome https://leetcode.com/problems/palindrome-number/submissions/
+let numberPalindrome = function(x) {
+    // console.log(x.toString().length==1)
+    reversedX=parseInt(x.toString().split('').reverse().join('').toString())
+    if(x.toString().length==1){
+        return true
+    }
+      else if (x.toString().charAt(0) == '-' || x.toString().slice(-1)==0 ) {
+        return false
+    } return x==reversedX ? true : false  
+}
+numberPalindrome(1)
