@@ -671,4 +671,34 @@ intToRoman=(num)=> {
     return result
 }
 intToRoman(1778)
-intToRoman(1778)
+
+
+
+//Roman To Integer https://leetcode.com/problems/roman-to-integer/
+
+let romanToInt = function(s) {
+    let list = {
+    'M': 1000,
+    'D': 500,
+    'C': 100,
+    'L': 50,
+    'X': 10,
+    'V': 5,
+    'I': 1
+}
+    let arr = s.split('')
+    console.log(arr)
+    let result = 0
+    for (let i = 0, len = arr.length; i < len; i++) {
+        let num = list[arr[i]]
+        console.log(num)
+        let nextNum = list[arr[i+1]]
+        if (nextNum !== num && nextNum > num) {
+            result -= num
+            continue
+        }
+        result += num
+    }
+    return result
+}
+romanToInt(VIIC)
