@@ -702,3 +702,13 @@ let romanToInt = function(s) {
     return result
 }
 romanToInt(VIIC)
+
+
+// longestCommonPrefix https://leetcode.com/problems/longest-common-prefix/
+
+let longestCommonPrefix=(strs)=>{
+
+
+}
+
+longestCommonPrefix(["flower","flow","flight"])
