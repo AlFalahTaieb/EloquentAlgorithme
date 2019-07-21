@@ -636,38 +636,38 @@ let myAtoi = function (x) {
 }
 
 // Check if a nmber is a Palindrome https://leetcode.com/problems/palindrome-number/submissions/
-let numberPalindrome = function(x) {
+let numberPalindrome = function (x) {
     // console.log(x.toString().length==1)
-    reversedX=parseInt(x.toString().split('').reverse().join('').toString())
-    if(x.toString().length==1){
+    reversedX = parseInt(x.toString().split('').reverse().join('').toString())
+    if (x.toString().length == 1) {
         return true
     }
-      else if (x.toString().charAt(0) == '-' || x.toString().slice(-1)==0 ) {
+    else if (x.toString().charAt(0) == '-' || x.toString().slice(-1) == 0) {
         return false
-    } return x==reversedX ? true : false  
+    } return x == reversedX ? true : false
 }
 numberPalindrome(1)
 
 
 //12. Integer to Roman https://leetcode.com/problems/integer-to-roman/
-intToRoman=(num)=> {
+intToRoman = (num) => {
     const hash = [
         ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX'],
         ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC'],
         ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM'],
         ['', 'M', 'MM', 'MMM']
     ]
-    
+
     let result = ''
     let i = 0
     while (num > 0) {
-      console.log(result)
-    
+        console.log(result)
+
         result = hash[i++][num % 10] + result
-        
+
         num = Math.floor(num / 10)
     }
-    
+
     return result
 }
 intToRoman(1778)
@@ -676,23 +676,23 @@ intToRoman(1778)
 
 //Roman To Integer https://leetcode.com/problems/roman-to-integer/
 
-let romanToInt = function(s) {
+let romanToInt = function (s) {
     let list = {
-    'M': 1000,
-    'D': 500,
-    'C': 100,
-    'L': 50,
-    'X': 10,
-    'V': 5,
-    'I': 1
-}
+        'M': 1000,
+        'D': 500,
+        'C': 100,
+        'L': 50,
+        'X': 10,
+        'V': 5,
+        'I': 1
+    }
     let arr = s.split('')
     console.log(arr)
     let result = 0
     for (let i = 0, len = arr.length; i < len; i++) {
         let num = list[arr[i]]
         console.log(num)
-        let nextNum = list[arr[i+1]]
+        let nextNum = list[arr[i + 1]]
         if (nextNum !== num && nextNum > num) {
             result -= num
             continue
@@ -707,15 +707,39 @@ romanToInt(VIIC)
 // longestCommonPrefix https://leetcode.com/problems/longest-common-prefix/
 
 
-longestCommonPrefix=(strs)=> {
+longestCommonPrefix = (strs) => {
     if (!strs.length) return '';
-for (let i=0; i<strs[0].length; i++){
-for (let str of strs) {
-    if (str[i] !== strs[0][i]) {
-      return str.slice(0, i);
+    for (let i = 0; i < strs[0].length; i++) {
+        for (let str of strs) {
+            if (str[i] !== strs[0][i]) {
+                return str.slice(0, i);
+            }
+        }
     }
-  }
+    return strs[0]
 }
- return strs[0]
+longestCommonPrefix(['Salut', 'Salaud', 'Salade'])
+
+
+// 15. 3Sum  https://leetcode.com/problems/3sum/
+threeSum = (nums) => {
+
+
+    let target = 0
+    let array = []
+    if (!nums.length) return ''
+
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            for (let k = j + 1; k < nums.length; k++) {
+                if (nums[i] + nums[j] + nums[k] === target) {
+                    array.push(i) && array.push(j) && array.push(k)
+                }
+            }
+
+        }
+    }
+
+    return array.slice(2)
 }
-longestCommonPrefix(['Salut','Salaud','Salade'])
+threeSum([-2, 2, 3, 4, 5, -1, -1])
