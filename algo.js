@@ -706,9 +706,16 @@ romanToInt(VIIC)
 
 // longestCommonPrefix https://leetcode.com/problems/longest-common-prefix/
 
-let longestCommonPrefix=(strs)=>{
 
-
+longestCommonPrefix=(strs)=> {
+    if (!strs.length) return '';
+for (let i=0; i<strs[0].length; i++){
+for (let str of strs) {
+    if (str[i] !== strs[0][i]) {
+      return str.slice(0, i);
+    }
+  }
 }
-
-longestCommonPrefix(["flower","flow","flight"])
+ return strs[0]
+}
+longestCommonPrefix(['Salut','Salaud','Salade'])
