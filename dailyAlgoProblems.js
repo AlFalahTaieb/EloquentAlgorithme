@@ -921,3 +921,21 @@ let uniqueMorseRepresentations = function(words) {
 };
 
 uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
+
+
+//832. Flipping an Image https://leetcode.com/problems/flipping-an-image/
+var flipAndInvertImage = function(A) {
+    let reversed = A.map((currArray, index) => {
+        return currArray.reverse();
+     })
+ for(var i = 0; i < reversed.length; i++){
+     for(var j = 0; j < reversed[i].length; j++){
+       if (reversed[i][j] === 1) {
+                 reversed[i][j] = 0;
+             } else {
+                 reversed[i][j] = 1; 
+             }
+ }}
+     return reversed
+ }
+ flipAndInvertImage([[0,1,1],[1,0,1],[0,0,0]])
