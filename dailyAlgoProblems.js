@@ -939,3 +939,14 @@ var flipAndInvertImage = function(A) {
      return reversed
  }
  flipAndInvertImage([[0,1,1],[1,0,1],[0,0,0]])
+
+
+//905. Sort Array By Parity https://leetcode.com/problems/sort-array-by-parity/
+ var sortArrayByParity = function(array) {
+    array.sort(function(a , b) {
+  return a % 2- b% 2;
+})
+return array
+}
+
+sortArrayByParity([3,1,2,4])
