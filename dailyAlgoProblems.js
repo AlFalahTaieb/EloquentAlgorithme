@@ -829,37 +829,38 @@ toLowerCase('Love')
 
 // wordToMorse 
 
-let wordToMorse  = function (words){
+let wordToMorse = function (words) {
     let list = {
-    ".-":"a",
-    "-...":"b",
-    "-.-.":"c",
-    "-..":"d",
-    ".":"e",
-    "..-.":"f",
-    "--.":"g",
-    "....":"h",
-    "..":"i",
-    ".---":"j",
-    "-.-":"k",
-    ".-..":"l",
-    "--":"m",
-    "-.":"n",
-    "---":"o",
-    ".--.":"p",
-    "--.-":"q",
-    ".-.":"r",
-    "...":"s",
-    "-":"t",
-    "..-":"u",
-    "...-":"v",
-    ".--":"w",
-    "-..-":"x",
-    "-.--":"y",
-    "--..":"z"}
-    let result=''
-let arr = words.split('')
-list1=Object.assign({}, ...Object.entries(list).map(([a,b]) => ({ [b]: a })))
+        ".-": "a",
+        "-...": "b",
+        "-.-.": "c",
+        "-..": "d",
+        ".": "e",
+        "..-.": "f",
+        "--.": "g",
+        "....": "h",
+        "..": "i",
+        ".---": "j",
+        "-.-": "k",
+        ".-..": "l",
+        "--": "m",
+        "-.": "n",
+        "---": "o",
+        ".--.": "p",
+        "--.-": "q",
+        ".-.": "r",
+        "...": "s",
+        "-": "t",
+        "..-": "u",
+        "...-": "v",
+        ".--": "w",
+        "-..-": "x",
+        "-.--": "y",
+        "--..": "z"
+    }
+    let result = ''
+    let arr = words.split('')
+    list1 = Object.assign({}, ...Object.entries(list).map(([a, b]) => ({ [b]: a })))
 
     for (let i = 0, len = arr.length; i < len; i++) {
         let letter = list1[arr[i]]
@@ -873,47 +874,47 @@ wordToMorse('zen')
 
 
 //804. Unique Morse Code Words https://leetcode.com/problems/unique-morse-code-words/
-let uniqueMorseRepresentations = function(words) {
+let uniqueMorseRepresentations = function (words) {
 
     let morseSet = new Set;
     let morse = "";
     function decode(elem) {
         var code = {
             "a": ".-",
-            "b":"-...",
-            "c":"-.-.",
-            "d":"-..",
-            "e":".",
-            "f":"..-.",
-            "g":"--.",
-            "h":"....",
-            "i":"..",
-            "j":".---",
-            "k":"-.-",
-            "l":".-..",
-            "m":"--",
-            "n":"-.",
-            "o":"---",
-            "p":".--.",
-            "q":"--.-",
-            "r":".-.",
-            "s":"...",
-            "t":"-",
-            "u":"..-",
-            "v":"...-",
-            "w":".--",
-            "x":"-..-",
-            "y":"-.--",
-            "z":"--.."
+            "b": "-...",
+            "c": "-.-.",
+            "d": "-..",
+            "e": ".",
+            "f": "..-.",
+            "g": "--.",
+            "h": "....",
+            "i": "..",
+            "j": ".---",
+            "k": "-.-",
+            "l": ".-..",
+            "m": "--",
+            "n": "-.",
+            "o": "---",
+            "p": ".--.",
+            "q": "--.-",
+            "r": ".-.",
+            "s": "...",
+            "t": "-",
+            "u": "..-",
+            "v": "...-",
+            "w": ".--",
+            "x": "-..-",
+            "y": "-.--",
+            "z": "--.."
         }
         return (code[elem]);
     }
 
-    for(let i = 0; i < words.length; i++) {
-        for(let j = 0; j < words[i].length; j++) {
-            morse += decode(words[i][j]);
+    for (let i = 0; i < words.length; i++) {
+        for (let j = 0; j < words[i].length; j++) {
+            morse += decode(words[i][j])
         }
-        morseSet.add(morse);
+        morseSet.add(morse)
 
         morse = ""
     }
@@ -924,48 +925,49 @@ uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
 
 
 //832. Flipping an Image https://leetcode.com/problems/flipping-an-image/
-let flipAndInvertImage = function(A) {
+let flipAndInvertImage = function (A) {
     let reversed = A.map((currArray, index) => {
-        return currArray.reverse();
-     })
- for(var i = 0; i < reversed.length; i++){
-     for(var j = 0; j < reversed[i].length; j++){
-       if (reversed[i][j] === 1) {
-                 reversed[i][j] = 0;
-             } else {
-                 reversed[i][j] = 1; 
-             }
- }}
-     return reversed
- }
- flipAndInvertImage([[0,1,1],[1,0,1],[0,0,0]])
+        return currArray.reverse()
+    })
+    for (var i = 0; i < reversed.length; i++) {
+        for (var j = 0; j < reversed[i].length; j++) {
+            if (reversed[i][j] === 1) {
+                reversed[i][j] = 0
+            } else {
+                reversed[i][j] = 1
+            }
+        }
+    }
+    return reversed
+}
+flipAndInvertImage([[0, 1, 1], [1, 0, 1], [0, 0, 0]])
 
 
 //905. Sort Array By Parity https://leetcode.com/problems/sort-array-by-parity/
- let sortArrayByParity = function(array) {
-    array.sort(function(a , b) {
-  return a % 2- b% 2;
-})
-return array
+let sortArrayByParity = function (array) {
+    array.sort(function (a, b) {
+        return a % 2 - b % 2
+    })
+    return array
 }
 
-sortArrayByParity([3,1,2,4])
+sortArrayByParity([3, 1, 2, 4])
 
 
 //961. N-Repeated Element in Size 2N Array  https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
 
 
-let repeatedNTimes = function(array) {
+var repeatedNTimes = function (array) {
     let freq = {}
-    for (let i=0; i<array.length;i++) {
+    for (let i = 0; i < array.length; i++) {
         let character = array[i]
         if (freq[character]) {
-           freq[character]++
+            freq[character]++
         } else {
-           freq[character] = 1
+            freq[character] = 1
         }
     }
     return Object.keys(freq).reduce((a, b) => freq[a] > freq[b] ? a : b)
-    }
-    
-    repeatedNTimes([1,2,3,3,3,4,5,3,5,5,5,3])
+}
+
+repeatedNTimes([1, 2, 3, 3, 3, 4, 5, 3, 5, 5, 5, 3])
