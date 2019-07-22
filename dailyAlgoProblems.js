@@ -984,4 +984,28 @@ let sortedSquares = function(array) {
   
   sortedSquares([-4,-1,0,3,10])
 
-  
+
+  // 657. Robot Return to Origin https://leetcode.com/problems/robot-return-to-origin/
+/**
+ * @param {string} moves
+ * @return {boolean}
+ */
+let judgeCircle = function(moves) {
+    let x=0;
+    let y=0;
+        for (let i = 0; i < moves.length; i++) {
+      if(moves[i]==='U'){
+            y=y-1 // y-=y
+        }else if(moves[i]==='D'){
+         y=y+1 //y+=y
+    }else if(moves[i]==='L'){
+        x=x+1 //x+=x
+    }else if(moves[i]==='R'){
+        x=x-1 // x-=x
+    }
+    }
+    return x == 0 && y == 0;
+    }
+    
+
+judgeCircle("RLUURDDDLU")
