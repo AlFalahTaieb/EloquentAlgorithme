@@ -869,3 +869,55 @@ list1=Object.assign({}, ...Object.entries(list).map(([a,b]) => ({ [b]: a })))
     return result
 }
 wordToMorse('zen')
+
+
+
+//804. Unique Morse Code Words https://leetcode.com/problems/unique-morse-code-words/
+let uniqueMorseRepresentations = function(words) {
+
+    let morseSet = new Set;
+    let morse = "";
+    function decode(elem) {
+        var code = {
+            "a": ".-",
+            "b":"-...",
+            "c":"-.-.",
+            "d":"-..",
+            "e":".",
+            "f":"..-.",
+            "g":"--.",
+            "h":"....",
+            "i":"..",
+            "j":".---",
+            "k":"-.-",
+            "l":".-..",
+            "m":"--",
+            "n":"-.",
+            "o":"---",
+            "p":".--.",
+            "q":"--.-",
+            "r":".-.",
+            "s":"...",
+            "t":"-",
+            "u":"..-",
+            "v":"...-",
+            "w":".--",
+            "x":"-..-",
+            "y":"-.--",
+            "z":"--.."
+        }
+        return (code[elem]);
+    }
+
+    for(let i = 0; i < words.length; i++) {
+        for(let j = 0; j < words[i].length; j++) {
+            morse += decode(words[i][j]);
+        }
+        morseSet.add(morse);
+
+        morse = ""
+    }
+    return morseSet.size
+};
+
+uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
