@@ -762,3 +762,55 @@ defangIPaddr=(address)=> {
     }
     
     numJewelsInStones('Aa',"aAAbbbb")
+
+
+
+    // 938. Range Sum of BST 
+    let rangeSumBST  = function (root, L, R){
+        let newArray=[]
+        let finalResult = 0
+            if (root == null) return 0
+      for(i=0;i<root.length;i++){
+        if(root[i]>=L && root[i]<=R ){
+      newArray.push(root[i])
+        }
+      }
+      for(j=0;j<newArray.length;j++){
+          finalResult+=newArray[j]
+      }
+      return finalResult
+      }
+      rangeSumBST([10,5,15,3,7,0,18],
+      7,
+      15)
+
+
+
+    /** **************Accepted ANSWER **********
+     * 
+     * 
+     * var rangeSumBST = function(root, L, R) {
+    let sum = 0;
+    if(root == null) {
+        return 0;
+    }
+    if(L <= root.val && root.val <= R) {
+      console.log(root.val)
+        sum = root.val;
+    }
+    
+    if(L <= root.val || R <= root.val) {
+       sum += rangeSumBST(root.left, L, R);
+   } 
+   if(root.val <= L || root.val <= R){
+       sum += rangeSumBST(root.right, L, R);
+   }
+    return sum    
+};
+
+rangeSumBST([10,5,15,3,7,0,18],
+7,
+15)
+*  
+*
+*/
