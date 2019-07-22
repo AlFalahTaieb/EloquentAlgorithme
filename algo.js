@@ -743,3 +743,14 @@ threeSum = (nums) => {
     return array.slice(2)
 }
 threeSum([-2, 2, 3, 4, 5, -1, -1])
+
+
+// 1108. Defanging an IP Address https://leetcode.com/problems/defanging-an-ip-address/
+defangIPaddr=(address)=> {
+
+    str = address.replace(/[.]/g, '[.]');
+    
+    
+    return str}
+    defangIPaddr("1.1.1.1")
+   
