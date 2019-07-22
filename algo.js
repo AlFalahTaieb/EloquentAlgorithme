@@ -827,3 +827,45 @@ let toLowerCase = function (str) {
 toLowerCase('Love')
 
 
+// wordToMorse 
+
+let wordToMorse  = function (words){
+    let list = {
+    ".-":"a",
+    "-...":"b",
+    "-.-.":"c",
+    "-..":"d",
+    ".":"e",
+    "..-.":"f",
+    "--.":"g",
+    "....":"h",
+    "..":"i",
+    ".---":"j",
+    "-.-":"k",
+    ".-..":"l",
+    "--":"m",
+    "-.":"n",
+    "---":"o",
+    ".--.":"p",
+    "--.-":"q",
+    ".-.":"r",
+    "...":"s",
+    "-":"t",
+    "..-":"u",
+    "...-":"v",
+    ".--":"w",
+    "-..-":"x",
+    "-.--":"y",
+    "--..":"z"}
+    let result=''
+let arr = words.split('')
+list1=Object.assign({}, ...Object.entries(list).map(([a,b]) => ({ [b]: a })))
+
+    for (let i = 0, len = arr.length; i < len; i++) {
+        let letter = list1[arr[i]]
+        console.log(letter)
+        result += letter
+    }
+    return result
+}
+wordToMorse('zen')
