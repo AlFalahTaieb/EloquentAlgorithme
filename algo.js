@@ -746,66 +746,67 @@ threeSum([-2, 2, 3, 4, 5, -1, -1])
 
 
 // 1108. Defanging an IP Address https://leetcode.com/problems/defanging-an-ip-address/
-defangIPaddr=(address)=> {
+defangIPaddr = (address) => {
 
     str = address.replace(/[.]/g, '[.]');
-    
-    
-    return str}
-    defangIPaddr("1.1.1.1")
-   //771. Jewels and Stones https://leetcode.com/problems/jewels-and-stones/
-
-    numJewelsInStones=(J, S) => {
-        const jewels = new Set(J)
-        console.log(jewels)
-        return S.split('').reduce((res, s) => res + jewels.has(s), 0)
-    }
-    
-    numJewelsInStones('Aa',"aAAbbbb")
 
 
+    return str
+}
+defangIPaddr("1.1.1.1")
+//771. Jewels and Stones https://leetcode.com/problems/jewels-and-stones/
 
-    // 938. Range Sum of BST 
-    let rangeSumBST  = function (root, L, R){
-        let newArray=[]
-        let finalResult = 0
-            if (root == null) return 0
-      for(i=0;i<root.length;i++){
-        if(root[i]>=L && root[i]<=R ){
-      newArray.push(root[i])
+numJewelsInStones = (J, S) => {
+    const jewels = new Set(J)
+    console.log(jewels)
+    return S.split('').reduce((res, s) => res + jewels.has(s), 0)
+}
+
+numJewelsInStones('Aa', "aAAbbbb")
+
+
+
+// 938. Range Sum of BST 
+let rangeSumBST = function (root, L, R) {
+    let newArray = []
+    let finalResult = 0
+    if (root == null) return 0
+    for (i = 0; i < root.length; i++) {
+        if (root[i] >= L && root[i] <= R) {
+            newArray.push(root[i])
         }
-      }
-      for(j=0;j<newArray.length;j++){
-          finalResult+=newArray[j]
-      }
-      return finalResult
-      }
-      rangeSumBST([10,5,15,3,7,0,18],
-      7,
-      15)
-
-
-
-    /** **************Accepted ANSWER **********
-     * 
-     * 
-     * var rangeSumBST = function(root, L, R) {
-    let sum = 0;
-    if(root == null) {
-        return 0;
     }
-    if(L <= root.val && root.val <= R) {
-      console.log(root.val)
-        sum = root.val;
+    for (j = 0; j < newArray.length; j++) {
+        finalResult += newArray[j]
     }
-    
-    if(L <= root.val || R <= root.val) {
-       sum += rangeSumBST(root.left, L, R);
-   } 
-   if(root.val <= L || root.val <= R){
-       sum += rangeSumBST(root.right, L, R);
-   }
-    return sum    
+    return finalResult
+}
+rangeSumBST([10, 5, 15, 3, 7, 0, 18],
+    7,
+    15)
+
+
+
+/** **************Accepted ANSWER **********
+ * 
+ * 
+ * var rangeSumBST = function(root, L, R) {
+let sum = 0;
+if(root == null) {
+    return 0;
+}
+if(L <= root.val && root.val <= R) {
+  console.log(root.val)
+    sum = root.val;
+}
+ 
+if(L <= root.val || R <= root.val) {
+   sum += rangeSumBST(root.left, L, R);
+} 
+if(root.val <= L || root.val <= R){
+   sum += rangeSumBST(root.right, L, R);
+}
+return sum    
 };
 
 rangeSumBST([10,5,15,3,7,0,18],
@@ -814,3 +815,15 @@ rangeSumBST([10,5,15,3,7,0,18],
 *  
 *
 */
+
+
+
+//709. To Lower Case https://leetcode.com/problems/to-lower-case/
+
+let toLowerCase = function (str) {
+
+    return str.toLowerCase()
+}
+toLowerCase('Love')
+
+
