@@ -924,7 +924,7 @@ uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
 
 
 //832. Flipping an Image https://leetcode.com/problems/flipping-an-image/
-var flipAndInvertImage = function(A) {
+let flipAndInvertImage = function(A) {
     let reversed = A.map((currArray, index) => {
         return currArray.reverse();
      })
@@ -942,7 +942,7 @@ var flipAndInvertImage = function(A) {
 
 
 //905. Sort Array By Parity https://leetcode.com/problems/sort-array-by-parity/
- var sortArrayByParity = function(array) {
+ let sortArrayByParity = function(array) {
     array.sort(function(a , b) {
   return a % 2- b% 2;
 })
@@ -950,3 +950,22 @@ return array
 }
 
 sortArrayByParity([3,1,2,4])
+
+
+//961. N-Repeated Element in Size 2N Array  https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
+
+
+let repeatedNTimes = function(array) {
+    let freq = {}
+    for (let i=0; i<array.length;i++) {
+        let character = array[i]
+        if (freq[character]) {
+           freq[character]++
+        } else {
+           freq[character] = 1
+        }
+    }
+    return Object.keys(freq).reduce((a, b) => freq[a] > freq[b] ? a : b)
+    }
+    
+    repeatedNTimes([1,2,3,3,3,4,5,3,5,5,5,3])
