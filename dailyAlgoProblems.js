@@ -957,7 +957,7 @@ sortArrayByParity([3, 1, 2, 4])
 //961. N-Repeated Element in Size 2N Array  https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
 
 
-var repeatedNTimes = function (array) {
+let repeatedNTimes = function (array) {
     let freq = {}
     for (let i = 0; i < array.length; i++) {
         let character = array[i]
@@ -971,3 +971,17 @@ var repeatedNTimes = function (array) {
 }
 
 repeatedNTimes([1, 2, 3, 3, 3, 4, 5, 3, 5, 5, 5, 3])
+
+//977. Squares of a Sorted Array https://leetcode.com/problems/squares-of-a-sorted-array/
+let sortedSquares = function(array) {
+    let result=[]
+  for(i=0;i<array.length;i++){
+    result.push(array[i]*array[i])
+  }
+  result.sort((a,b)=>a-b)
+  return result
+  }
+  
+  sortedSquares([-4,-1,0,3,10])
+
+  
