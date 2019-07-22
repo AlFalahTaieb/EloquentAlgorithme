@@ -753,4 +753,12 @@ defangIPaddr=(address)=> {
     
     return str}
     defangIPaddr("1.1.1.1")
-   
+   //771. Jewels and Stones https://leetcode.com/problems/jewels-and-stones/
+
+    numJewelsInStones=(J, S) => {
+        const jewels = new Set(J)
+        console.log(jewels)
+        return S.split('').reduce((res, s) => res + jewels.has(s), 0)
+    }
+    
+    numJewelsInStones('Aa',"aAAbbbb")
