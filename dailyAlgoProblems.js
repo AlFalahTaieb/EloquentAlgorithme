@@ -1009,3 +1009,40 @@ let judgeCircle = function(moves) {
     
 
 judgeCircle("RLUURDDDLU")
+
+
+//728. Self Dividing Numbers https://leetcode.com/problems/self-dividing-numbers/
+checkDiv = (num) => {
+    num = num.toString().split('')
+    return num
+  }
+  
+  
+   divNum = (num) =>{
+  let finalResult=[]
+    result = checkDiv(num)
+    for (i = 0; i < result.length; i++) {
+      if (num % result[i]== 0) {
+        finalResult.push(result[i])
+      }
+    }
+    return finalResult.join('') == num
+  }
+  
+  
+  var selfDividingNumbers = function(l, r) {
+        let array=[]
+  
+      for(i=l;i<=r;i++){
+  if(divNum(i)===true){
+  array.push(i)
+  }}
+          return array
+      
+  }
+  
+  
+  
+  
+  
+  selfDividingNumbers(1,22)
