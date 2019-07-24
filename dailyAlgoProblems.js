@@ -973,76 +973,76 @@ let repeatedNTimes = function (array) {
 repeatedNTimes([1, 2, 3, 3, 3, 4, 5, 3, 5, 5, 5, 3])
 
 //977. Squares of a Sorted Array https://leetcode.com/problems/squares-of-a-sorted-array/
-let sortedSquares = function(array) {
-    let result=[]
-  for(i=0;i<array.length;i++){
-    result.push(array[i]*array[i])
-  }
-  result.sort((a,b)=>a-b)
-  return result
-  }
-  
-  sortedSquares([-4,-1,0,3,10])
+let sortedSquares = function (array) {
+    let result = []
+    for (i = 0; i < array.length; i++) {
+        result.push(array[i] * array[i])
+    }
+    result.sort((a, b) => a - b)
+    return result
+}
+
+sortedSquares([-4, -1, 0, 3, 10])
 
 
-  // 657. Robot Return to Origin https://leetcode.com/problems/robot-return-to-origin/
+// 657. Robot Return to Origin https://leetcode.com/problems/robot-return-to-origin/
 /**
  * @param {string} moves
  * @return {boolean}
  */
-let judgeCircle = function(moves) {
-    let x=0;
-    let y=0;
-        for (let i = 0; i < moves.length; i++) {
-      if(moves[i]==='U'){
-            y=y-1 // y-=y
-        }else if(moves[i]==='D'){
-         y=y+1 //y+=y
-    }else if(moves[i]==='L'){
-        x=x+1 //x+=x
-    }else if(moves[i]==='R'){
-        x=x-1 // x-=x
-    }
+let judgeCircle = function (moves) {
+    let x = 0;
+    let y = 0;
+    for (let i = 0; i < moves.length; i++) {
+        if (moves[i] === 'U') {
+            y = y - 1 // y-=y
+        } else if (moves[i] === 'D') {
+            y = y + 1 //y+=y
+        } else if (moves[i] === 'L') {
+            x = x + 1 //x+=x
+        } else if (moves[i] === 'R') {
+            x = x - 1 // x-=x
+        }
     }
     return x == 0 && y == 0;
-    }
-    
+}
+
 
 judgeCircle("RLUURDDDLU")
 
 
 //728. Self Dividing Numbers https://leetcode.com/problems/self-dividing-numbers/
-checkDiv = (num) => {
-    num = num.toString().split('')
-    return num
-  }
-  
-  
-   divNum = (num) =>{
-  let finalResult=[]
-    result = checkDiv(num)
-    for (i = 0; i < result.length; i++) {
-      if (num % result[i]== 0) {
-        finalResult.push(result[i])
-      }
+
+
+let selfDividingNumbers = function (l, r) {
+    checkDiv = (num) => {
+        num = num.toString().split('')
+        return num
     }
-    return finalResult.join('') == num
-  }
-  
-  
-  var selfDividingNumbers = function(l, r) {
-        let array=[]
-  
-      for(i=l;i<=r;i++){
-  if(divNum(i)===true){
-  array.push(i)
-  }}
-          return array
-      
-  }
-  
-  
-  
-  
-  
-  selfDividingNumbers(1,22)
+
+
+    divNum = (num) => {
+        let finalResult = []
+        result = checkDiv(num)
+        for (i = 0; i < result.length; i++) {
+            if (num % result[i] == 0) {
+                finalResult.push(result[i])
+            }
+        }
+        return finalResult.join('') == num
+    }
+    let array = []
+
+    for (let i = l; i <= r; i++) {
+        if (divNum(i) !== false) {
+            array.push(i)
+        }
+
+    }
+    return array
+
+}
+selfDividingNumbers(1, 22)
+
+
+
