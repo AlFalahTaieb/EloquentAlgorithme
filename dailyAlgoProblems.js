@@ -1046,3 +1046,18 @@ selfDividingNumbers(1, 22)
 
 
 
+//617. Merge Two Binary Trees https://leetcode.com/problems/merge-two-binary-trees/submissions/
+
+
+let mergeTrees =function(t1, t2) {
+    if(t1 && t2){
+        const newNode = new TreeNode(t1.val + t2.val)
+        newNode.left=mergeTrees(t1.left,t2.left)
+        newNode.right=mergeTrees(t1.right,t2.right)
+        return newNode
+    }
+    return t1 || t2
+    
+    }
+    
+    mergeTrees([1,3,2,5][2,1,3,null,4,null,7])
