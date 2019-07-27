@@ -1095,3 +1095,14 @@ let hammingDistance = function (x, y) {
 }
 
 hammingDistance(680142203, 1111953568)
+
+
+/**CORRECT ONE  */
+//Check XOR OPP  https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_binaires#(XOR_binaire)
+let hammingDistance = (x, y)=> {
+    let res = (x ^ y).toString(2).split('').filter(num => num === "1").length
+  
+  return res
+  }
+  
+  hammingDistance(1,4)
