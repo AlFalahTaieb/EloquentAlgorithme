@@ -1049,15 +1049,49 @@ selfDividingNumbers(1, 22)
 //617. Merge Two Binary Trees https://leetcode.com/problems/merge-two-binary-trees/submissions/
 
 
-let mergeTrees =function(t1, t2) {
-    if(t1 && t2){
+let mergeTrees = function (t1, t2) {
+    if (t1 && t2) {
         const newNode = new TreeNode(t1.val + t2.val)
-        newNode.left=mergeTrees(t1.left,t2.left)
-        newNode.right=mergeTrees(t1.right,t2.right)
+        newNode.left = mergeTrees(t1.left, t2.left)
+        newNode.right = mergeTrees(t1.right, t2.right)
         return newNode
     }
     return t1 || t2
-    
+
+}
+
+mergeTrees([1, 3, 2, 5][2, 1, 3, null, 4, null, 7])
+
+
+//461. Hamming Distance https://leetcode.com/problems/hamming-distance/
+
+/**THIS SOLUTION NEED A REWORK */
+
+let hammingDistance = function (x, y) {
+    if (!(0 < x, y < 2147483648)) {
+        return undefined
     }
-    
-    mergeTrees([1,3,2,5][2,1,3,null,4,null,7])
+    console.log(x ^ y)
+    let res = 0
+    let array1 = x.toString(2).toString().split('')
+    let array2 = y.toString(2).toString().split('')
+    console.table(array1)
+    console.table(array2)
+    while (array1.length < 4) {
+        array1.unshift('0')
+    }
+    while (array2.length < 4) {
+        array2.unshift('0')
+    }
+
+    array1.forEach((a, i) => {
+        console.log(a == array2[i])
+        if (a !== array2[i]) {
+            res = res + 1
+        }
+    })
+
+    return res
+}
+
+hammingDistance(680142203, 1111953568)
