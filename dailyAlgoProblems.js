@@ -1106,3 +1106,24 @@ let hammingDistance = (x, y)=> {
   }
   
   hammingDistance(1,4)
+
+ // 852. Peak Index in a Mountain Array  https://leetcode.com/problems/peak-index-in-a-mountain-array/
+
+let peakIndexInMountainArray = (A)=> {
+    var largest = A[0]
+    maximumI=0
+    for (var i = 0; i < A.length; i++) {
+        if (largest < A[i] ) {
+            largest = A[i]
+            maximumI = i
+        }
+    }
+    return maximumI
+    
+    }
+      
+    
+    peakIndexInMountainArray([0,10,44,5,22])
+      
+    
+      
