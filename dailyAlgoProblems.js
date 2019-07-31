@@ -1126,13 +1126,12 @@ let peakIndexInMountainArray = (A)=> {
     peakIndexInMountainArray([0,10,44,5,22])
       
 //561. Array Partition I https://leetcode.com/problems/array-partition-i/
-var arrayPairSum = function(nums) {
-    if(nums.length%2==0){
-    resul=nums.sort((a,b)=>a-b)
-    return resul
-    }else
-        return 0
-    
-    };
-    
-    arrayPairSum([1,4,3,2])
+
+let arrayPairSum = function(nums) {
+    return nums
+        .sort((a, b) => a - b)
+        .reduce((sum, cur, i) => (i % 2 === 0) ? sum += cur : sum, 0);
+};
+
+
+arrayPairSum([1,4,3,2,6,5])
