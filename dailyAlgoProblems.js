@@ -1135,3 +1135,14 @@ let arrayPairSum = function(nums) {
 
 
 arrayPairSum([1,4,3,2,6,5])
+
+//1051. Height Checker https://leetcode.com/problems/height-checker/
+let heightChecker = function(heights) {
+    let sortedHeights = heights.slice(0).sort( (a,b)=>a-b)
+    let count = 0
+    for( let i =0; i<heights.length; i++) {
+        if( heights[i] !== sortedHeights[i]) count++
+    }
+    return count
+}
+heightChecker([1,2,3,4,4,1,1])
